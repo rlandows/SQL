@@ -1,0 +1,45 @@
+1. What's a RubyGem and why would you use one?
+
+	A RubyGem is a tool used by ruby developers that has the purpose of making developers jobs easier. There are gems for a variety of purposes, such as accessing an api, making login’s simple, and encrypting sensitive information. A RubyGem is accessible to anyone and can be installed into their project. You would use a RubyGem if you wanted to add a feature that either you don’t know how to implement yourself, you can implement yourself but the performance of the gem is better, or you just want to save time.
+
+2. What's the difference between lazy and eager loading?
+
+	Lazy loading is a design pattern where objects will only be called when they are needed. The opposite of this is eager loading, when an object is initialized, all the calculations that are associated with it are made. The preferred design pattern is eager loading.
+
+3.What's the difference between the CREATE TABLE and INSERT INTO SQL statements?
+
+The difference is that these are two completely different statements. What CREATE TABLE does is create a brand new table inside of the database. Following the CREATE TABLE statement, you would give the name of the table followed by a pair of parentheses that would include column names and what type of data they would store, followed by a comma. An example of this would be:
+
+CREATE TABLE rocks(name TEXT, type TEXT, quantity INTEGER);
+
+INSERT INTO is a statement you would use to add data into a table. An example of this would be:
+
+INSERT INTO rocks(name, type, quantity) VALUES (“limestone”,”sedimentary”,7);
+
+
+4.What's the difference between extend and include? When would you use one or the other?
+
+The difference between extend and include is that with extend, we can add class methods from a module. With include, we add instance methods from a module. For instance, if you call extend on a module, the class will now have a module’s methods as class methods. If you were to call the same thing with include, then you would have access to the module’s methods as instance methods.
+
+5.In persistence.rb, why do the save methods need to be instance (vs. class) methods?
+
+The save method needs to be an instance method because we are saving data for that particular instance. When we use the instance method, we would be saving to an individual object, while using the class method, we would be saving to a whole class.
+
+6.Given the Jar-Jar Binks example earlier, what is the final SQL query in persistence.rb's save! method?
+
+From the Jar-Jar Binks example, the final SQL query would look like:
+	UPDATE character 
+	SET character_name = “Jar-Jar Binks”, star_rating = 1
+	WHERE id = 1
+
+7.AddressBook's entries instance variable no longer returns anything. We'll fix this in a later checkpoint. What changes will we need to make?
+
+As stated in the curriculum there is no way to relate an AddressBook to an entry. What we can add to make this return data is a method that will access the database through SQL (or we can use an already made method like find or find_by). This will allow us to get a return from the entries instance.
+
+
+8. convert to CamelCase
+
+ str.gsub!(/^[a-z]/) {|w| w.capitalize}
+ str.gsub!(/_[a-z]/) {|w| w[1].capitalize}
+puts str.tr!("_","")
+
